@@ -16,7 +16,6 @@ public class Runner : MonoBehaviour {
 		JUMPING_DOWN
 	}
 	[SerializeField] CharacterType CharType;
-	[SerializeField] Vector3 DirectionVector;
 	[SerializeField] float Gravity = 8f;
 	[SerializeField] float JumpHeight = 5f;
 	[SerializeField] float Speed = 5f;
@@ -25,7 +24,14 @@ public class Runner : MonoBehaviour {
 	State m_state = State.IDLE;
 	// Use this for initialization
 	void Awake () {
-		m_direction = DirectionVector;
+		InitForNewGround();
+	}
+	public void InitForNewGround()
+	{	
+		if(CharType == CharacterType.LEFT_CHARACTER)
+			m_direction = Vector3.right;
+		else
+			m_direction = Vector3.left;
 	}
 	void SetState(State state)
 	{

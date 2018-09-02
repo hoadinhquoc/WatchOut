@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4735750401302220}
   - component: {fileID: 114713539886735336}
   m_Layer: 0
-  m_Name: LeftMC
+  m_Name: BigMC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4930624890384212}
   - component: {fileID: 114495923403070082}
   m_Layer: 0
-  m_Name: RightMC
+  m_Name: SmallMC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
