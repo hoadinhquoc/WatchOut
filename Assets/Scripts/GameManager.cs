@@ -7,14 +7,19 @@ public class GameManager : MonoBehaviour {
 	void Awake()
 	{
 		Instance = this;
-	}
+        RegisterEvents();
+    }
+    void RegisterEvents()
+    {
+        GameEvents.START_GAME += GameStart;
+    }
 	// Use this for initialization
 	void GameStart () {
-		
+        StartNewRound();
 	}
 	void StartNewRound()
 	{
-		
+        GameEvents.START_NEW_ROUND.Raise();
 	}
 	void OnMCDeath()
 	{

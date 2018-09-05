@@ -24,9 +24,20 @@ public class Runner : MonoBehaviour {
 	State m_state = State.IDLE;
 	// Use this for initialization
 	void Awake () {
-		InitForNewGround();
+		SetupDirection();
 	}
-	public void InitForNewGround()
+    public void SetupCharacter(CharacterType type, float positionX)
+    {
+        CharType = type;
+
+        Vector3 currentPos = transform.position;
+        currentPos.x = positionX;
+        transform.position = currentPos;
+        SetupDirection();
+
+        SetState(State.RUNNING);
+    }
+	void SetupDirection()
 	{	
 		if(CharType == CharacterType.LEFT_CHARACTER)
 			m_direction = Vector3.right;
@@ -54,6 +65,9 @@ public class Runner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float dt = Time.deltaTime;
+
+        if (IsState(State.IDLE)) return;
+
 		CheckInput();
 		UpdateDirection();
 		Vector3 pos = transform.position;
