@@ -107,6 +107,7 @@ public class Runner : MonoBehaviour {
 	{
 		if(col.gameObject.CompareTag("MC"))
 		{
+			GameEvents.MC_DEATH.Raise();
 			SetState(State.IDLE);
 		}
 	}

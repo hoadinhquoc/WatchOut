@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
     void RegisterEvents()
     {
         GameEvents.START_GAME += GameStart;
+		GameEvents.MC_DEATH += OnMCDeath;
     }
 	// Use this for initialization
 	void GameStart () {
@@ -23,14 +24,12 @@ public class GameManager : MonoBehaviour {
 	}
 	void OnMCDeath()
 	{
-
+		CancelInvoke();
+		Invoke("OnGameOver", 1f);
 	}
 	void OnGameOver()
 	{
+		GameEvents.GAME_OVER.Raise();
+	}
 
-	}
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
