@@ -102,4 +102,12 @@ public class Runner : MonoBehaviour {
 			}
 		}
 	}
+
+	public void OnChildTriggerEnter(Collider col)
+	{
+		if(col.gameObject.CompareTag("MC"))
+		{
+			SetState(State.IDLE);
+		}
+	}
 }

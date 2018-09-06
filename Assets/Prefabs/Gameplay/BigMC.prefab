@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114713539886735336}
   m_Layer: 0
   m_Name: BigMC
-  m_TagString: Untagged
+  m_TagString: MC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,9 +39,10 @@ GameObject:
   - component: {fileID: 23348815873513466}
   - component: {fileID: 65767816156700288}
   - component: {fileID: 54891608228416530}
+  - component: {fileID: 114544168418535778}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: MC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,6 +143,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114544168418535778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1930841560083012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec505311f05ef149aa76b6c60b58b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnterTriggerEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114713539886735336}
+        m_MethodName: OnChildTriggerEnter
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityColliderEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114713539886735336
 MonoBehaviour:
   m_ObjectHideFlags: 1
