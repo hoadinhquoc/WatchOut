@@ -8,6 +8,7 @@ public class MCController : MonoBehaviour {
 
     [SerializeField] float LeftPositionX = -10f;
     [SerializeField] float RightPositionX = 10f;
+    CharacterType m_smallCharacterType;
     // Use this for initialization
     void Awake()
 	{
@@ -19,13 +20,29 @@ public class MCController : MonoBehaviour {
         {
             BigRunner.SetupCharacter(CharacterType.RIGHT_CHARACTER, RightPositionX);
             SmallRunner.SetupCharacter(CharacterType.LEFT_CHARACTER, LeftPositionX);
+
+            m_smallCharacterType = CharacterType.LEFT_CHARACTER;
         }
         else
         {
             SmallRunner.SetupCharacter(CharacterType.RIGHT_CHARACTER, RightPositionX);
             BigRunner.SetupCharacter(CharacterType.LEFT_CHARACTER, LeftPositionX);
+
+            m_smallCharacterType = CharacterType.RIGHT_CHARACTER;
         }
 
 	}
+
+    void Update()
+    {
+        if(m_smallCharacterType == CharacterType.RIGHT_CHARACTER && SmallRunner.transform.position.x < -15f)
+        {
+            GameEvents.END_ROUND.Raise();
+        }
+        if(m_smallCharacterType == CharacterType.LEFT_CHARACTER && SmallRunner.transform.position.x > 15f)
+        {
+            GameEvents.END_ROUND.Raise();
+        }
+    }
 	
 }

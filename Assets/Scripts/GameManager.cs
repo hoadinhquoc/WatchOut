@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
     {
         GameEvents.START_GAME += GameStart;
 		GameEvents.MC_DEATH += OnMCDeath;
+		GameEvents.END_ROUND += OnEndRound;
     }
 	// Use this for initialization
 	void GameStart () {
@@ -21,6 +22,11 @@ public class GameManager : MonoBehaviour {
 	void StartNewRound()
 	{
         GameEvents.START_NEW_ROUND.Raise();
+	}
+
+	void OnEndRound()
+	{
+		StartNewRound();
 	}
 	void OnMCDeath()
 	{
