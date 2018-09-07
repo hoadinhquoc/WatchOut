@@ -19,7 +19,7 @@ public class Runner : MonoBehaviour {
 	[SerializeField] float Gravity = 8f;
 	[SerializeField] float JumpHeight = 5f;
 	[SerializeField] float Speed = 5f;
-
+	[SerializeField] bool CanJump = true;
 	Vector3 m_direction;
 	State m_state = State.IDLE;
 	// Use this for initialization
@@ -32,9 +32,10 @@ public class Runner : MonoBehaviour {
 
         Vector3 currentPos = transform.position;
         currentPos.x = positionX;
+		currentPos.y = 0f;
         transform.position = currentPos;
         SetupDirection();
-
+		CanJump = true;
         SetState(State.RUNNING);
     }
 	void SetupDirection()
@@ -78,7 +79,22 @@ public class Runner : MonoBehaviour {
 
 	void CheckInput()
 	{
+		if(!CanJump) return;
+
 		KeyCode key = CharType == CharacterType.LEFT_CHARACTER ? KeyCode.LeftArrow : KeyCode.RightArrow;
+
+		if(Input.GetMouseButtonDown(0))
+		{
+			CanJump = false;
+			Vector2 mousePosition = Input.mousePosition;
+			CharacterType jumpChar = mousePosition.x > (Screen.width/2f) ? CharacterType.RIGHT_CHARACTER : CharacterType.LEFT_CHARACTER;
+			if(CharType == jumpChar)
+			{
+				SetState(State.JUMPING_UP);
+			}
+
+		}
+		
 		if(Input.GetKeyDown(key))
 		{
 			SetState(State.JUMPING_UP);
