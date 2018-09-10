@@ -1007,6 +1007,23 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4342333974099036, guid: 41a10ab33aa2e4e3ea2ab9112cbb8a99, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342333974099036, guid: 41a10ab33aa2e4e3ea2ab9112cbb8a99, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342333974099036, guid: 41a10ab33aa2e4e3ea2ab9112cbb8a99, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114713539886735336, guid: 41a10ab33aa2e4e3ea2ab9112cbb8a99,
+        type: 2}
+      propertyPath: JumpHeight
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41a10ab33aa2e4e3ea2ab9112cbb8a99, type: 2}
   m_IsPrefabAsset: 0
@@ -1048,6 +1065,32 @@ Prefab:
     - target: {fileID: 4930624890384212, guid: d17a2512a26304b608a46d45dbe5dedf, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33560464604100578, guid: d17a2512a26304b608a46d45dbe5dedf,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 4328177904677666, guid: d17a2512a26304b608a46d45dbe5dedf, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328177904677666, guid: d17a2512a26304b608a46d45dbe5dedf, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328177904677666, guid: d17a2512a26304b608a46d45dbe5dedf, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328177904677666, guid: d17a2512a26304b608a46d45dbe5dedf, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114495923403070082, guid: d17a2512a26304b608a46d45dbe5dedf,
+        type: 2}
+      propertyPath: JumpHeight
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d17a2512a26304b608a46d45dbe5dedf, type: 2}

@@ -14,19 +14,19 @@ public class MCController : MonoBehaviour {
 	{
         GameEvents.START_NEW_ROUND += OnStartNewRound;
 	}
-	void OnStartNewRound () {
-		
+	void OnStartNewRound (int roundIndex) {
+		float speed = 8f + roundIndex*2f;
         if(Time.frameCount % 2 == 0)
         {
-            BigRunner.SetupCharacter(CharacterType.RIGHT_CHARACTER, RightPositionX);
-            SmallRunner.SetupCharacter(CharacterType.LEFT_CHARACTER, LeftPositionX);
+            BigRunner.SetupCharacter(CharacterType.RIGHT_CHARACTER, RightPositionX, speed);
+            SmallRunner.SetupCharacter(CharacterType.LEFT_CHARACTER, LeftPositionX, speed);
 
             m_smallCharacterType = CharacterType.LEFT_CHARACTER;
         }
         else
         {
-            SmallRunner.SetupCharacter(CharacterType.RIGHT_CHARACTER, RightPositionX);
-            BigRunner.SetupCharacter(CharacterType.LEFT_CHARACTER, LeftPositionX);
+            SmallRunner.SetupCharacter(CharacterType.RIGHT_CHARACTER, RightPositionX, speed);
+            BigRunner.SetupCharacter(CharacterType.LEFT_CHARACTER, LeftPositionX, speed);
 
             m_smallCharacterType = CharacterType.RIGHT_CHARACTER;
         }

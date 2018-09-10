@@ -19,6 +19,7 @@ public class Runner : MonoBehaviour {
 	[SerializeField] float Gravity = 8f;
 	[SerializeField] float JumpHeight = 5f;
 	[SerializeField] float Speed = 5f;
+	[SerializeField] float OffsetJumpSpeed = 15f;
 	[SerializeField] bool CanJump = true;
 	Vector3 m_direction;
 	State m_state = State.IDLE;
@@ -26,10 +27,10 @@ public class Runner : MonoBehaviour {
 	void Awake () {
 		SetupDirection();
 	}
-    public void SetupCharacter(CharacterType type, float positionX)
+    public void SetupCharacter(CharacterType type, float positionX, float speed)
     {
         CharType = type;
-
+		Speed = speed;
         Vector3 currentPos = transform.position;
         currentPos.x = positionX;
 		currentPos.y = 0f;
@@ -72,7 +73,7 @@ public class Runner : MonoBehaviour {
 		CheckInput();
 		UpdateDirection();
 		Vector3 pos = transform.position;
-		pos += m_direction.normalized * dt * Speed;
+		pos += m_direction.normalized * dt * (IsState(State.RUNNING) ? Speed : Speed + OffsetJumpSpeed);
 
 		transform.position = pos;
 	}
@@ -97,6 +98,7 @@ public class Runner : MonoBehaviour {
 		
 		if(Input.GetKeyDown(key))
 		{
+			CanJump = false;
 			SetState(State.JUMPING_UP);
 		}
 	}

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 	public static GameManager Instance;
+	int m_roundIndex = 0;
 	void Awake()
 	{
 		Instance = this;
@@ -17,11 +18,13 @@ public class GameManager : MonoBehaviour {
     }
 	// Use this for initialization
 	void GameStart () {
+		m_roundIndex = 0;
         StartNewRound();
 	}
 	void StartNewRound()
 	{
-        GameEvents.START_NEW_ROUND.Raise();
+		GameEvents.SCORE_CHANGED(m_roundIndex);
+        GameEvents.START_NEW_ROUND.Raise(m_roundIndex++);
 	}
 
 	void OnEndRound()
