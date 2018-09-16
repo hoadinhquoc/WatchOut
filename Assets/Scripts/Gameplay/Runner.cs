@@ -31,10 +31,10 @@ public class Runner : MonoBehaviour {
     {
         CharType = type;
 		Speed = speed;
-        Vector3 currentPos = transform.position;
+        Vector3 currentPos = transform.localPosition;
         currentPos.x = positionX;
 		currentPos.y = 0f;
-        transform.position = currentPos;
+        transform.localPosition = currentPos;
         SetupDirection();
 		CanJump = true;
         SetState(State.RUNNING);
@@ -72,10 +72,10 @@ public class Runner : MonoBehaviour {
 
 		CheckInput();
 		UpdateDirection();
-		Vector3 pos = transform.position;
+		Vector3 pos = transform.localPosition;
 		pos += m_direction.normalized * dt * (IsState(State.RUNNING) ? Speed : Speed + OffsetJumpSpeed);
 
-		transform.position = pos;
+		transform.localPosition = pos;
 	}
 
 	void CheckInput()
@@ -104,7 +104,7 @@ public class Runner : MonoBehaviour {
 	}
 	void UpdateDirection()
 	{
-		Vector3 currentPos = transform.position;
+		Vector3 currentPos = transform.localPosition;
 		if(IsState(State.JUMPING_UP))
 		{
 			if(currentPos.y > JumpHeight)
@@ -116,7 +116,7 @@ public class Runner : MonoBehaviour {
 			{
 				SetState(State.RUNNING);
 				currentPos.y = 0f;
-				transform.position = currentPos;
+				transform.localPosition = currentPos;
 			}
 		}
 	}

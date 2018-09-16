@@ -35,11 +35,11 @@ public class MCController : MonoBehaviour {
 
     void Update()
     {
-        if(m_smallCharacterType == CharacterType.RIGHT_CHARACTER && SmallRunner.transform.position.x < -15f)
+        if(m_smallCharacterType == CharacterType.RIGHT_CHARACTER && SmallRunner.transform.localPosition.x < -15f)
         {
             GameEvents.END_ROUND.Raise();
         }
-        if(m_smallCharacterType == CharacterType.LEFT_CHARACTER && SmallRunner.transform.position.x > 15f)
+        if(m_smallCharacterType == CharacterType.LEFT_CHARACTER && SmallRunner.transform.localPosition.x > 15f)
         {
             GameEvents.END_ROUND.Raise();
         }
