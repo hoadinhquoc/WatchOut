@@ -54,8 +54,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1930841560083012}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 1.25, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2}
   m_Children: []
   m_Father: {fileID: 4735750401302220}
   m_RootOrder: 0
@@ -183,5 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharType: 0
   Gravity: 8
-  JumpHeight: 2
+  JumpHeight: 3.5
   Speed: 10
+  OffsetJumpSpeed: 20
+  CanJump: 1
